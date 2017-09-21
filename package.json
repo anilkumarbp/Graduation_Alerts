@@ -1,0 +1,58 @@
+{
+  "name": "Grad_Screenshots",
+  "version": "1.0.0",
+  "description": "Simple Node App to read an excel and post the HTML table to Glip",
+  "license": "MIT",
+  "homepage": "https://developer.ringcentral.com/",
+  "author": "AKBP <anil.kumar@ringcentral.com> (https://github.com/anilkumarbp)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/anilkumarbp/Grad_Screenshots"
+  },
+  "scripts": {
+    "start": "node app.js",
+    "test": "mocha"
+  },
+  "engines": {
+    "node": "7.4.0"
+  },
+  "keywords": [
+    "Glip",
+    "RingCentral"
+  ],
+  "bugs": "https://github.com/anilkumarbp/Grad_Screenshots/issues",
+  "dependencies": {
+    "body-parser": "latest",
+    "chai-http": "^3.0.0",
+    "consolidate": "^0.14.5",
+    "coveralls": "~2.7.1",
+    "dotenv": "^4.0.0",
+    "ejs": "^2.5.6",
+    "express": "^4.11.0",
+    "express-handlebars": "latest",
+    "handlebars": "^4.0.8",
+    "istanbul": "~0.2.4",
+    "jade": "0.20.x",
+    "mustache-express": "latest",
+    "ringcentral": "^3.1.1",
+    "sinon": "^1.17.4",
+    "superagent": "^3.5.2",
+    "supertest": "^3.0.0",
+    "swig": "^1.4.2",
+    "unirest": "^0.5.1",
+    "xlsx": "latest"
+  },
+  "devDependencies": {
+    "jest": "^19.0.2",
+    "chai": "^3.5.0",
+    "mocha": "^3.2.0",
+    "co-mocha": "1.1.2",
+    "sinon": "1.17.4",
+    "sinon-chai": "2.8.0"
+  },
+  "jest": {
+    "testMatch": [
+      "**/test/"
+    ]
+  }
+}
