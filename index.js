@@ -55,7 +55,7 @@ function init() {
     /*
     Create the HTTP JSON Body
      */
-    var myObject = {"title": "**Graduation Report for : " + today + "**"};
+    var myObject = {"title": "**Graduation Report as of : " + today + "**"};
     var attachements = [];
 
     /*
@@ -98,7 +98,7 @@ function init() {
     }
 
     myObject.attachments = attachements;
-    myObject.body = "**Graduation Full Report** : https://docs.google.com/spreadsheets/d/1sk-jlI5ZS0vBjnRU_UW7JMSEcz3K9R9HVWozTyseoY0/edit#gid=0" + "\n" + "**Applications Applied for Graduation** : " + xlData.length + "\n" + "**Graduated** : " + appsGraduated + "\n" + "**Declined** : " + appsDeclined + "\n" + "**Pending** : " + appsPending + "\n";
+    myObject.body = "**Applications Applied for Graduation** : " + xlData.length + "\n" + "**Graduated** : " + appsGraduated + "\n" + "**Declined** : " + appsDeclined + "\n" + "**Pending** : " + appsPending + "\n" + "\n" + "**Daily Graduation Report** : https://docs.google.com/spreadsheets/d/1sk-jlI5ZS0vBjnRU_UW7JMSEcz3K9R9HVWozTyseoY0/edit#gid=0" + "\n" + "\n" + "Here are supplementary graduation weekly and daily sheets with charts for you: https://docs.google.com/a/ringcentral.com/spreadsheets/d/1WVPdmFxFPn-lrwzzEPdacXguDlBT0f_ACzbnMfKnjrU/edit?usp=sharing";
     textProcess(myObject);
 }
 
