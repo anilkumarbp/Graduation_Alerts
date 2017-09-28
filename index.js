@@ -16,19 +16,6 @@ var http = require('http');
 var xlsx = require('xlsx');
 var server = http.createServer();
 
-
-// Initialize the sdk for RC
-var sdk = new RC({
-    server: process.env.RC_API_BASE_URL,
-    appKey: process.env.RC_APP_KEY,
-    appSecret: process.env.RC_APP_SECRET,
-    cachePrefix: process.env.RC_CACHE_PREFIX
-});
-
-
-// Bootstrap Platform and Subscription
-var platform = sdk.platform();
-
 var workbook = xlsx.readFile('Master.xlsx');
 var sheet_name_list = workbook.SheetNames;
 var xlData = xlsx.utils.sheet_to_json(workbook.Sheets[sheet_name_list[0]])
@@ -86,14 +73,14 @@ function init() {
 
         fields.push({"title": "Org Name", "value": xlData[i].OrgName, "short": true});
         fields.push({"title": "App Name", "value": "["+xlData[i].AppName+"]"+"("+xlData[i].AppLink+")", "short": true});
-        fields.push({"title": "Scope", "value": xlData[i].Private, "short": true});
+        fields.push({"title": "Scope", "value": xlData[i].Scope, "short": true});
         fields.push({"title": "Request Date", "value": xlData[i].RequestDate, "short": true});
         fields.push({"title": "Grad", "value": xlData[i].Grad, "short": true});
         fields.push({"title": "Review Date", "value": xlData[i].ReviewDate, "short": true});
         fields.push({"title": "FreeAcct", "value": xlData[i].FreeAcct, "short": true});
 
         attachement.fields = fields;
-        attachement.color = '#' + ("000000" + Math.random().toString(16).slice(2, 8).toUpperCase()).slice(-6);
+        attachement.color = '#' + (xlData[i].Scope == "Private" ? "0000FF" : "FFA500");
         attachements.push(attachement);
     }
 
