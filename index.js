@@ -45,6 +45,7 @@ function init() {
     var myObject = {"title": "**Graduation Report as of : " + today + "**"};
     var attachements = [];
     var appLink = "https://ai-developer.ringcentral.com/administration.html#/application/";
+    var orgLink = "https://ai-developer.ringcentral.com/administration.html#/organization-info/";
 
     /*
     Count of Apps
@@ -72,7 +73,7 @@ function init() {
                 appsPending++;
             }
 
-        fields.push({"title": "Org Name", "value": xlData[i].OrgName, "short": true});
+        fields.push({"title": "Org Name", "value": "["+xlData[i].OrgName+"]"+"("+ orgLink + xlData[i].AppId.substr(0,xlData[i].AppId.indexOf('~')) + ")", "short": true});
         fields.push({"title": "App Name", "value": "["+xlData[i].AppName+"]"+"("+ appLink + xlData[i].AppId + ")", "short": true});
         fields.push({"title": "Scope", "value": xlData[i].Scope, "short": true});
         fields.push({"title": "Request Date", "value": xlData[i].RequestDate, "short": true});
